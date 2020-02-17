@@ -1,0 +1,62 @@
+{
+    "projects":[
+        {
+            "id":0,
+            "project_name":"Walmart Digital Signage",
+            "description":"Create a static content generator and used open source headless CMS to create content creation, management and delivery for 20k screens across 2200 locations.",
+            "technologies":["React","Node.js","PHP","javascript"],
+            "live_link":"",
+            "github_link":"",
+            "image_urls":["../images/ds1.png",
+                          "../images/ds2.png",
+                          "../images/ds3.png"]
+        },
+        {
+            "id":1,
+            "project_name":"kpow.com",
+            "description":"My personal site and sandbox to play around with technologies, currently a portal of the RSS/music/books I consume, oh and some projects. ",
+            "technologies":["React","Gatsby","Semantic UI","Static Hosting"],
+            "live_link":"https://kpow.com",
+            "github_link":"https://github.com/kpow/kpow-space",
+            "image_urls":["../images/kpow2.png",
+                          "../images/kpow1.png",
+                          "../images/kpow3.png",
+                          "../images/kpow4.png"]
+        },
+        {
+            "id":2,
+            "project_name":"Neighborhood Goods",
+            "description":"I lead the production team for the build of 2 mobile apps, 1 ecomm site, instore sensors packages for micro-location feature and consumer analytics, along with digital signage implemantation",
+            "technologies":["Next.js","Django","AWS","Docker"],
+            "live_link":"https://neighborhoodgoods.com",
+            "github_link":"",
+            "image_urls":["../images/ng1.png",
+                          "../images/ng2.png",
+                          "../images/ng3.png",
+                          "../images/ng4.png"]
+        },
+        {
+            "id":3,
+            "project_name":"Puzzle Hunter",
+            "description":"Hamg-man Clone in the browser built with OOP JS",
+            "technologies":["Javascript","HTML","CSS","OOP"],
+            "live_link":"https://neighborhoodgoods.com",
+            "github_link":"",
+            "image_urls":["../images/ph1.png",
+                          "../images/ph2.png",
+                          "../images/ph3.png",
+                          "../images/ph4.png"]
+        },
+        {
+            "id":4,
+            "project_name":"Unobtrusive JS Form",
+            "description":"An example of using an unobtrusive JS approach to enhance and form",
+            "technologies":["Javascript","HTML","CSS","jquer"],
+            "live_link":"https://neighborhoodgoods.com",
+            "github_link":"",
+            "image_urls":["../images/form1.png",
+                          "../images/form2.png",
+                          "../images/form3.png"]
+        }
+    ]
+}
