@@ -2,27 +2,29 @@
 const express = require('express');
 // create a new router to caprure the routes
 const router = express.Router();
-// load up our mock data
-const  data  = require('../data.json');
-// assign it to a var from deep in the object
-const { projects } = data;
 
 // capture the base route
-router.get( '/', ( req, res ) => {
-console.log('project')
-});
+router.get( '/', ( req, res ) => res.redirect('/') );
 
 // route capture project request with id
 router.get('/:id', (req, res) => {
-    // example of how to get a query string value
-    const { projectID } = req.query;
-    const projectData = projects[projectID]
+    
+    const { id } = req.params;
+    let templateData = null
+    //loop through project data and when we match an id from the data we render
+    res.locals.forEach(project => {
+        if(project.id === parseInt(id)) templateData = {"project":project}
+    })
 
-    // line it all up in a object ready to eat.
-    const templateData = { projectData };
-
-    // lets render the template
-    res.render('project', templateData);
+    if(templateData){
+        res.render('project', templateData) 
+    }else{
+        const err = new Error('Not Found');
+        err.status = 404;
+        res.locals.error = err;
+        res.status(err.status);
+        res.render('error',res.locals);
+    }
 });
 
 // lets spit it all out so the main app can see it

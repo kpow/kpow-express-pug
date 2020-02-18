@@ -1,17 +1,20 @@
 
-h1,h2,h3,h4,h5,p{
-  font-family: 'Merriweather', serif;
+h1,h2,h3,h4,h5{
+  font-family: 'Slackey', serif;
+  line-height: 1.2;
+}
+
+p{
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;;
 }
 
   h5{
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    letter-spacing: 2.5px;
-    -webkit-text-transform: uppercase;
-    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
   }
 
   h6{
-    letter-spacing: 2.5px;
     -webkit-text-transform: uppercase;
     text-transform: uppercase;
     font-weight: 600;

@@ -2,21 +2,15 @@
 const express = require('express');
 // get router to capture these request
 const router = express.Router();
-// load up our mock data
-const  data  = require('../data.json');
-// assign it to a var from deep in the object
-const { projects } = data;
 
-
-// base route
+// base route for homre page, had it data in the locals
 router.get('/', (req, res) => { 
-  res.render('index', data);
-  console.dir(data)
+  res.render('index', {"projects":res.locals});
 });
 
-// when you ge to the homepage
+// lets go to the about page
 router.get('/about', (req, res) => {
   res.render('about')
 });
-
+// lets export it so can access it
 module.exports = router;
