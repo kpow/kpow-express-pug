@@ -2,6 +2,9 @@
 
 EPP is a sample express app that looks little bit like a portfolio
 
+## demo link
+https://kpow-express-pug.herokuapp.com/
+
 ## Installation
 
 Use NPM to install dependancies
