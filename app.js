@@ -15,7 +15,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// base route for homre page, had it data in the locals
+// base route for home page, had it data in the locals
 app.get('/', (req, res) => { 
     res.render('index', {"projects":res.locals});
 });
@@ -25,7 +25,8 @@ app.get('/about', (req, res) => {
     res.render('about')
 });
 
-app.get( '/', ( req, res ) => res.redirect('/') );
+// if someone messes up the url lets send them back home
+app.get( 'project/', ( req, res ) => res.redirect('/') );
 
 // route capture project request with id
 app.get('/project/:id', (req, res, next) => {
@@ -36,7 +37,7 @@ app.get('/project/:id', (req, res, next) => {
     res.locals.forEach(project => {
         if(project.id === parseInt(id)) templateData = {"project":project}
     })
-
+    // if we have template data render other ship to the error handler
    templateData ? res.render('project', templateData) : next();
 
 });
@@ -57,6 +58,7 @@ app.use((err, req, res, next) => {
 
 });
 
+// added this for heroku deployment
 const port = process.env.PORT || 3000
 
 // start the entire app
