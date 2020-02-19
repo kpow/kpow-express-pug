@@ -11,7 +11,7 @@ npm install
 ```
 
 ## Usage
-you need to have nodemon (https://www.npmjs.com/package/nodemon) installed
+
 ```bash
 npm start
 ```
