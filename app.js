@@ -14,13 +14,32 @@ app.use((req, res, next) => {
     res.locals = data.projects;
     next();
 });
-// now we need to load our routes
-const mainRoutes = require('./routes');
-const projectRoutes = require('./routes/project');
-// tell the app to use these routes
-app.use(mainRoutes);
-// set the card routes base url for the route
-app.use(['/project','/projects'], projectRoutes);
+
+// base route for homre page, had it data in the locals
+app.get('/', (req, res) => { 
+    res.render('index', {"projects":res.locals});
+});
+  
+// lets go to the about page
+app.get('/about', (req, res) => {
+    res.render('about')
+});
+
+app.get( '/', ( req, res ) => res.redirect('/') );
+
+// route capture project request with id
+app.get('/project/:id', (req, res, next) => {
+    
+    const { id } = req.params;
+    let templateData = null
+    //loop through project data and when we match an id from the data we render
+    res.locals.forEach(project => {
+        if(project.id === parseInt(id)) templateData = {"project":project}
+    })
+
+   templateData ? res.render('project', templateData) : next();
+
+});
 
 // to capture our 404 error
 app.use((req, res, next) => {
@@ -33,7 +52,9 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
     res.locals.error = err;
     res.status(err.status);
+    console.log(`error = ${err.status}`)
     res.render('error',res.locals);
+
 });
 
 // start the entire app
