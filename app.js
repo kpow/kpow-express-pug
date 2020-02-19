@@ -11,13 +11,13 @@ app.set('view engine', 'pug');
 app.use('/static', express.static('public'));
 // add our data to response object so everyone can get to it.
 app.use((req, res, next) => {
-    res.locals = data.projects;
+    res.locals.projects = data.projects;
     next();
 });
 
 // base route for home page, had it data in the locals
 app.get('/', (req, res) => { 
-    res.render('index', {"projects":res.locals});
+    res.render('index', {"projects":res.locals.projects});
 });
   
 // lets go to the about page
@@ -34,7 +34,7 @@ app.get('/project/:id', (req, res, next) => {
     const { id } = req.params;
     let templateData = null
     //loop through project data and when we match an id from the data we render
-    res.locals.forEach(project => {
+    res.locals.projects.forEach(project => {
         if(project.id === parseInt(id)) templateData = {"project":project}
     })
     // if we have template data render other ship to the error handler
