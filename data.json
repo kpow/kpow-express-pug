@@ -41,7 +41,7 @@
             "description":"Hang-man Clone in the browser built with OOP JS",
             "technologies":["Javascript","HTML","CSS","OOP"],
             "live_link":"https://kpow.github.io/oop_game-v2/",
-            "github_link":"",
+            "github_link":"https://github.com/kpow/oop_game-v2",
             "image_urls":["ph1.png",
                           "ph2.png",
                           "ph3.png"]
@@ -52,7 +52,7 @@
             "description":"An example of using an unobtrusive JS approach to enhance a ticket form",
             "technologies":["Javascript","HTML","CSS","jQuery"],
             "live_link":"https://kpow.github.io/interactive-form-v1/",
-            "github_link":"",
+            "github_link":"https://github.com/kpow/interactive-form-v1",
             "image_urls":["form1.png",
                           "form2.png",
                           "form3.png"]
